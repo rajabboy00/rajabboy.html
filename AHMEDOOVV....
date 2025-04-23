@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card with Rotation</title>
+  <style>
+    body {
+      background-color: #a2d5c6;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .profile-img {
+      transform: rotate(360deg);
+    }
+
+    .card h3 {
+      margin: 15px 0 5px;
+    }
+
+    .card p {
+      color: gray;
+      margin-bottom: 20px;
+    }
+
+    .card button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      color: white;
+      transition: background-color 0.2s;
+    }
+
+    .follow {
+      background-color: #00bfa6;
+    }
+
+    .follow:hover {
+      background-color: #009e8a;
+    }
+
+    .message {
+      background-color: #007bff;
+    }
+
+    .message:hover {
+      background-color: #005ecb;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="profile-img" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile">
+    <h3>Jane Doe</h3>
+    <p>Frontend Developer</p>
+    <button class="follow">Follow</button>
+    <button class="message">Message</button>
+  </div>
+</body>
+</html>
