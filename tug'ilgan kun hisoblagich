@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎂 Tug'ilgan Kun Hisoblagich</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            padding: 50px;
+            color: white;
+        }
+        .container {
+            background: rgba(0,0,0,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background: #ffeb3b;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎂 Qancha Kun Yashaganman?</h1>
+        <input type="date" id="birthdate" />
+        <br>
+        <button onclick="hisobla()">🎉 Hisobla!</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function hisobla() {
+            const b = document.getElementById("birthdate").value;
+            if (!b) return alert("Sanani tanlang!");
+
+            const birth = new Date(b);
+            const today = new Date();
+
+            if (birth > today) return alert("Kelajakda tug'ilgan bo'la olmaysiz 😉");
+
+            const days = Math.floor((today - birth) / (1000 * 60 * 60 * 24));
+            const yrs = Math.floor(days / 365.25);
+            const rem = Math.floor(days % 365.25);
+
+            document.getElementById("result").innerHTML = `
+                💫 Siz <strong>${days}</strong> kun yashadingiz!<br>
+                Yoki <strong>${yrs} yil, ${rem} kun</strong> — ajoyib!
+            `;
+        }
+    </script>
+</body>
+</html> ....
