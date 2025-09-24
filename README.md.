@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume — Ahmedov Rajabboy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 28px;
+      color: #2c3e50;
+      margin-bottom: 8px;
+    }
+    .contact {
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+    h2 {
+      font-size: 20px;
+      color: #2980b9;
+      margin: 20px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #eee;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .highlight {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-left: 4px solid #3498db;
+      margin-top: 15px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AHMEDOV RAJABBOY RAJABOVICH</h1>
+    <div class="contact">
+      📧 rajabboyahmedov71@gmail.com | 🌐 Masofaviy ishlash (O‘zbekiston)
+    </div>
+
+    <div class="section">
+      <h2>MAQSAD</h2>
+      <p>IT sohasida dasturchi sifatida masofaviy ishlash, dasturiy ta’minot yaratish, loyihalarni amalga oshirish va o‘z ko‘nikmalarimni rivojlantirish.</p>
+    </div>
+
+    <div class="section">
+      <h2>TEXNIK KO‘NIKMA</h2>
+      <ul>
+        <li><strong>Dasturlash tillari:</strong> Java, Python, C++</li>
+        <li><strong>Veb-dasturlash:</strong> HTML, CSS</li>
+        <li><strong>Ish uslubi:</strong> Masofaviy ishlash, mustaqil loyihalar</li>
+        <li><strong>Qo‘shimcha:</strong> Loyihalarga chuqur qiziqish, yangi texnologiyalarni o‘rganishga tayyorgarlik</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>TA'LIM</h2>
+      <p>Ma'lumot yo‘q</p>
+    </div>
+
+    <div class="section">
+      <h2>LOYIHALAR VA QIZIQISH SOHALARI</h2>
+      <ul>
+        <li>Dasturlash orqali amaliy loyihalar yaratishga qiziqaman</li>
+        <li>Yangi dasturiy yechimlar, veb-ilovalar va algoritmlar ustida ishlashni xohlayman</li>
+        <li>Mustaqil ravishda o‘rganish orqali ko‘nikmalarimni doim yangilab boraman</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>TIL BILISH</h2>
+      <ul>
+        <li><strong>O‘zbek tili</strong> – ona tili</li>
+        <li><strong>Rus tili</strong> – o‘qish/yozish (asosiy daraja)</li>
+        <li><strong>Ingliz tili</strong> – B1 (50%) – texnik hujjatlarni tushunish, dasturlashda foydalanish</li>
+      </ul>
+    </div>
+
+    <div class="highlight">
+      Masofaviy ishlashga tayyorman. Loyihaga qarab, kerakli texnologiyalarni tez o‘rganish qobiliyatim bor.
+    </div>
+  </div>
+</body>
+</html>
