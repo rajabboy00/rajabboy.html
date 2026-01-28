@@ -1,0 +1,1558 @@
+SAVOLLAR
+
+1. Asosiy sintaksis
+Python nima? - Yuqori darajali, interpretatsiyalanadigan, dinamik til.
+O'zgaruvchi qanday e'lon qilinadi? - x = 5 (to'g'ridan-to'g'ri qiymat berish).
+O'zgaruvchi nomlash qoidalari? - Harf yoki _ bilan boshlanadi, raqamlar bo'lishi mumkin, katta-kichik harf farqlanadi.
+Dinamik tipizatsiya nima? - O'zgaruvchi tipi avtomatik aniqlanadi.
+Asosiy ma'lumot turlari? - int, float, str, list, tuple, dict, set, bool.
+== va is farqi? - == qiymatni, is obyekt identifikatorini tekshiradi.
+None nima? - Hech narsani ifodalovchi maxsus konstant.
+2. Ma'lumot turlari
+Raqamlar:
+Raqamli turlar? - int (butun), float (kasr), complex (kompleks).
+int va float farqi? - int butun son, float kasr son.
+Satrlar (String):
+Satr qanday yaratiladi? - "text", 'text', """multiline text"""
+Indeksatsiya va kesim (slicing)? - text[0] birinchi belgi, text[2:5] 2 dan 5 gacha.
+Asosiy metodlar? - upper(), lower(), split(), strip(), join()
+Satr formatlash? - f-string: f"Salom {name}", format(): "{}".format(name)
+Raw string nima? - r"C:\new\folder" - maxsus belgilar talqin qilinmaydi.
+Ro'yxatlar (List):
+Ro'yxat yaratish? - list1 = [1, 2, 3]
+Asosiy metodlar? -
+append(x) - oxiriga qo'shish
+extend([x,y]) - ro'yxatga qo'shish
+insert(i, x) - indeksga qo'shish
+remove(x) - qiymat bo'yicha o'chirish
+pop(i) - indeks bo'yicha o'chirish
+append() vs extend()? - append() bitta element, extend() bir nechta element.
+List comprehension? - [x*2 for x in range(10)]
+Kortejlar (Tuple):
+Ro'yxatdan farqi? - Kortej o'zgarmas (immutable), tezroq, xotirada kam joy oladi.
+Qachon ishlatiladi? - O'zgarmas ma'lumotlar to'plami uchun.
+Lug'atlar (Dict):
+Lug'at yaratish? - dict1 = {"key": "value"}
+Qiymatni olish? - dict1["key"] yoki dict1.get("key")
+keys(), values(), items()? - Kalitlar, qiymatlar, juftliklarni qaytaradi.
+Kalit borligini tekshirish? - "key" in dict1
+To'plamlar (Set):
+To'plam nima? - Takrorlanmas elementlar to'plami.
+set vs frozenset? - frozenset o'zgarmas to'plam.
+Operatsiyalar? - Birlashma |, kesishma &, farq -
+3. Operatorlar
+Arifmetik: +, -, *, /, //, %, **
+Taqqoslash: ==, !=, >, <, >=, <=
+Mantiqiy: and, or, not
+Mansublik: in, not in
+Identifikatsiya: is, is not
+Ustuvorlik: Qavslar () eng yuqori.
+4. Boshqaruv konstruksiyalari
+Shart operatorlari:
+if-elif-else sintaksisi:
+python
+if x > 0:
+    print("Musbat")
+elif x == 0:
+    print("Nol")
+else:
+    print("Manfiy")
+Ternary operator: result = "Ha" if x > 0 else "Yo'q"
+Sikllar:
+for sikli: for item in sequence:
+range() funktsiyasi: range(5) - 0 dan 4 gacha
+while sikli: while condition:
+break, continue, pass:
+break - sikldan chiqish
+continue - keyingi iteratsiyaga o'tish
+pass - hech narsa qilmaslik (plaseholder)
+Siklda else: Shart bajarilmasa ishlaydi, break bilan ishlamaydi.
+5. Funktsiyalar
+Funktsiya e'lon qilish: def func_name(parameters):
+Parametr va argument farqi: Parametr - funktsiya e'lonidagi o'zgaruvchi, argument - chaqirilganda beriladigan qiymat.
+Pozitsion va nominal argumentlar: Pozitsion - tartib bo'yicha, nominal - nom bilan.
+Standart qiymatli parametrlar: def func(x=10):
+*args va **kwargs:
+*args - pozitsion argumentlar tuple sifatida
+**kwargs - nominal argumentlar dict sifatida
+global vs nonlocal:
+global - global o'zgaruvchini o'zgartirish
+nonlocal - tashqi funksiyadagi o'zgaruvchini o'zgartirish
+Lambda funktsiyalar: lambda x: x*2 - nomsiz bir qatorli funktsiya
+map(), filter(), reduce():
+map(func, sequence) - har bir elementga funktsiya qo'llash
+filter(func, sequence) - shartni qanoatlantirgan elementlarni filtrlash
+reduce(func, sequence) - ketma-ket qo'llash orqali bitta qiymat qaytarish
+6. Fayllar bilan ishlash
+Faylni ochish: open("file.txt", "r")
+Rejimlar:
+"r" - o'qish uchun (default)
+"w" - yozish uchun (eskisini o'chiradi)
+"a" - qo'shish uchun (oxiridan)
+"b" - binar rejim
+with kontekst menejeri: Faylni avtomatik yopadi.
+O'qish metodlari: read(), readline(), readlines()
+Yozish: write(), writelines()
+7. Istisnolar (Exceptions)
+Istisno nima? - Dastur ishlashidagi xatolik.
+try-except-else-finally:
+python
+try:
+    # kod
+except ExceptionType:
+    # xatolik ishlovchi
+else:
+    # xatolik bo'lmaganda
+finally:
+    # har doim ishlaydi
+Standart istisnolar: ValueError, TypeError, IndexError, KeyError
+Foydalanuvchi istisnosi: class MyError(Exception):
+raise kalit so'zi: Istisnoni ko'tarish.
+8. Modullar va paketlar
+Modul nima? - .py fayli.
+Import qilish usullari:
+import module
+from module import function
+import module as alias
+__name__ == "__main__": Fayl to'g'ridan-to'g'ri ishga tushirilganda ishlaydi.
+Paket nima? - Modullar to'plami.
+__init__.py fayli: Paketni belgilaydi.
+9. Ichki qurilma funktsiyalar
+Asosiylari:
+len(obj) - uzunlik
+type(obj) - tur
+id(obj) - identifikator
+print() - chop etish
+input() - kiritish
+int(), str(), float(), bool() - konvertatsiya
+list(), dict(), tuple(), set() - konstruktorlar
+enumerate() - indeks bilan
+zip() - bir nechta ketma-ketliklarni birlashtirish
+sorted() - tartiblash
+min(), max(), sum() - minimum, maksimum, yig'indi
+10. Generatorlar va iteratorlar
+Iterable obyekt nima? - for sikli bilan aylantirish mumkin bo'lgan obyekt.
+Iterator vs generator: Iterator - next() bilan element beradi, generator - yield bilan funktsiya.
+Generator yaratish:
+python
+def my_gen():
+    yield 1
+    yield 2
+Generator ifodasi: (x*2 for x in range(5))
+11. Sana va vaqt
+datetime moduli:
+python
+from datetime import datetime
+now = datetime.now()
+Joriy sana: datetime.today()
+Formatlash: strftime("%Y-%m-%d")
+12. Qo'shimcha mavzular
+Docstring: """Funktsiya haqida ma'lumot"""
+Tip annotatsiyalari: def func(x: int) -> str:
+Mutable vs immutable:
+Mutable: list, dict, set
+Immutable: int, str, tuple
+Nusxa olish:
+Shallow copy - ichki obyektlarga havola
+Deep copy - to'liq nusxa
+itertools moduli: Iteratsiya vositalari.
+Dekoratorlar: Funktsiyani o'rab, uning ishini o'zgartirish.
+
+Mashqlar misollari:
+Palindrom tekshirish:
+python
+def is_palindrome(text):
+    return text == text[::-1]
+Eng ko'p uchraydigan so'z:
+python
+from collections import Counter
+text = "python python java"
+words = text.split()
+most_common = Counter(words).most_common(1)[0]
+Juft sonlarni filtrlash:
+python
+numbers = [1, 2, 3, 4, 5]
+evens = [x for x in numbers if x % 2 == 0]
+Tub sonlar generatori:
+python
+def primes():
+    yield 2
+    primes_list = [2]
+    num = 3
+    while True:
+        if all(num % p != 0 for p in primes_list):
+            yield num
+            primes_list.append(num)
+        num += 2
+CSV faylni o'qish:
+python
+with open('data.csv', 'r') as f:
+    for line in f:
+        print(line.strip().split(','))
+
+
+
+
+
+1.1 Foydalanuvchidan ismini so'rab, salom beruvchi dastur yozing
+1.2 Doiraning yuzini hisoblash dasturini yozing (π = 3.141591415914159)
+1.3 Ikki sonning yig'indisi, ayirmasi, ko'paytmasi va bo'linmasini hisoblovchi dastur
+1.4 Temperatura konvertori (Celsius ↔ Fahrenheit)
+1.5 Uchburchakning gipotenuzasini hisoblovchi dastur
+1.6 Sonning juft yoki toqligini aniqlovchi funksiya
+1.7 Sonning musbat, manfiy yoki nol ekanligini aniqlovchi dastur
+1.8 3 ta sondan eng kattasini topuvchi dastur
+1.9 Sekundlarni soat:daqiqa:soniya formatiga o'tkazuvchi dastur
+1.10 Sonning 2, 3, 5 ga bo'linishini tekshiruvchi dastur
+1.11 Sonning raqamlari yig'indisini hisoblovchi dastur
+1.12 Sonni teskari tartibda chiqaruvchi dastur (masalan: 123 → 321)
+1.13 Kvadrat tenglamaning ildizlarini hisoblovchi dastur (ax² + bx + c = 0)
+1.14 Kilogrammlarni funtga, funtlarni kilogrammga o'tkazuvchi dastur
+1.15 Bank hisobidagi pulni foiz stavkasi bo'yicha 5 yilga hisoblovchi dastur
+1.16 Uch xonali sonning birlik, o'nlik, yuzlik raqamlarini ajratuvchi dastur
+1.17 Vaqtni soat va daqiqaga bo'lib, soatlarni minutga o'tkazuvchi dastur
+1.18 3 ta sondan o'rtacha qiymatini hisoblovchi dastur
+1.19 1 dan N gacha bo'lgan sonlar yig'indisini hisoblovchi dastur
+1.20 Kiritilgan 4 ta sondan faqat juftlarini chiqaruvchi dastur
+1.21 Sonning kvadrati va kubini hisoblovchi dastur
+1.22 Har bir talabaning 3 ta bahosidan o'rtacha bahosini hisoblovchi dastur
+1.23 Doiraning radiusidan uning uzunligini (2πr) hisoblovchi dastur
+1.24 Boshlang'ich tezlik, tezlanish va vaqt berilganda masofani hisoblovchi dastur
+1.25 Har ikala tomoni berilgan to'g'ri to'rtburchakning perimetri va yuzini hisoblovchi dastur
+1.26 Kun boshidan boshlab N sekund o'tganda soat necha bo'lishini hisoblovchi dastur1.26 Kun boshidan boshlab N sekund o'tganda soat necha bo'lishini hisoblovchi dastur
+1.27 2 xonali sonni o'ngdan chapga va chapdan o'ngga o'qish natijasini solishtiruvchi dastur
+1.28 Sonning 4 ga karrali ekanligini tekshiruvchi dastur
+1.29 3 xonali sonning raqamlari o'sish tartibida ekanligini tekshiruvchi dastur
+1.30 Ikki vaqt oralig'ini hisoblovchi dastur (soat:daqiqa formatida)
+
+2. Satrlar (String) bilan ishlash (25 masala)
+2.1 Satrni teskari tartibda chiqaruvchi dastur
+2.2 Satr palindrom ekanligini tekshiruvchi funksiya
+2.3 Satrdagi unlilar (a, e, i, o, u) sonini hisoblovchi dastur
+2.4 Satrdagi so'zlar sonini hisoblovchi dastur
+2.5 Satrning birinchi va oxirgi harfini katta qiluvchi dastur
+2.6 Satrdagi barcha probellarni olib tashlovchi dastur
+2.7 Satrda berilgan belgining necha marta takrorlanishini hisoblovchi dastur
+2.8 Satrni vergul bo'yicha ajratib, ro'yxat qilib chiqaruvchi dastur
+2.9 Email manzilining to'g'ri ekanligini tekshiruvchi dastur (@ belgisi borligini)
+2.10 Katta harflarni kichik, kichik harflarni katta qiluvchi dastur
+2.11 Satrning ichida berilgan so'z bor-yo'qligini tekshiruvchi dastur
+2.12 Berilgan so'zni satrning boshiga va oxiriga qo'shuvchi dastur
+2.13 Satrdagi har bir so'zning birinchi harfini katta qiluvchi dastur
+2.14 Ikki satrning bir-biriga teng ekanligini tekshiruvchi dastur
+2.15 Satrni N marta takrorlab chiqaruvchi dastur
+2.16 Satrning uzunligini hisoblab, 50 dan katta bo'lsa "uzun", kichik bo'lsa "qisqa" deb chiqaruvchi dastur
+2.17 Satrdagi raqamlarni ajratib oluvchi dastur
+2.18 Parolning mustahkamligini tekshiruvchi dastur (kamida 8 belgi, katta/kichik harf, raqam)
+2.19 URL manzilidan domain nomini ajratib oluvchi dastur
+2.20 CSV formatdagi satrdan ma'lumotlarni ajratuvchi dastur
+2.21 Satrni belgilar bo'yicha aylantirib, har birini yangi qatorda chiqaruvchi dastur
+2.22 Telefon raqamini formatlovchi dastur (998901234567 → +998 90 123 45 67)
+2.23 Satrdagi eng uzun so'zni topuvchi dastur
+2.24 Har bir belgining ASCII kodini chiqaruvchi dastur
+2.25 Satrni N-belgidan boshlab kesib oluvchi dastur
+
+3. Ro'yxatlar (Lists) bilan ishlash (25 masala)
+3.1 Ro'yxatdagi elementlar yig'indisini hisoblovchi dastur
+3.2 Ro'yxatdagi eng katta va eng kichik sonni topuvchi dastur
+3.3 Ro'yxatni teskari tartibda chiqaruvchi dastur
+3.4 Ro'yxatdagi juft sonlarni ajratib oluvchi dastur
+3.5 Ro'yxatdagi elementlarning o'rtacha qiymatini hisoblovchi dastur
+3.6 Ikki ro'yxatni birlashtiruvchi dastur
+3.7 Ro'yxatda berilgan element bor-yo'qligini tekshiruvchi dastur
+3.8 Ro'yxatdagi takrorlangan elementlarni olib tashlovchi dastur
+3.9 Ro'yxatni o'sish tartibida tartiblovchi dastur (sort ishlatmasdan)
+3.10 Ro'yxatning birinchi va oxirgi elementlarini almashtiruvchi dastur
+3.11 Ro'yxatni N marta aylantiruvchi dastur (chapga yoki o'ngga)
+3.12 Ro'yxatdagi elementlar ko'paytmasini hisoblovchi dastur
+3.13 Ro'yxatdan faqat musbat sonlarni oluvchi dastur
+3.14 Har bir elementni kvadratga ko'tarib yangi ro'yxat qaytaruvchi dastur
+3.15 Ro'yxatda nechta satr (string) borligini hisoblovchi dastur
+3.16 Ro'yxatni ikki qismga bo'luvchi dastur (juft indekslar, toq indekslar)
+3.17 Ro'yxat elementlarini satrga aylantiruvchi dastur
+3.18 Ro'yxatda eng ko'p takrorlangan elementni topuvchi dastur
+3.19 Ro'yxatni ichidagi ro'yxatlardan iborat bo'lsa, ularni birlashtiruvchi dastur
+3.20 Ro'yxatdan N-indeksdagi elementni o'chiruvchi dastur
+3.21 Ro'yxatga yangi element qo'shuvchi, lekin ro'yxat tartibini saqlovchi dastur
+3.22 Ro'yxatdagi har bir elementni uning indeksi bilan chiqaruvchi dastur
+3.23 Ro'yxatda elementlar necha marta takrorlanganini hisoblovchi dastur
+3.24 Ikki ro'yxatning kesishmasini topuvchi dastur
+3.25 Ro'yxatni tasodifiy tartibda aralashtiruvchi dastur
+
+4. Lug'atlar (Dictionaries) bilan ishlash (20 masala)
+4.1 Talabalar lug'atini yaratuvchi dastur (ID, ism, familiya, yosh)
+4.2 Lug'atdagi barcha kalitlarni chiqaruvchi dastur
+4.3 Lug'atdagi barcha qiymatlarni chiqaruvchi dastur
+4.4 Lug'atda berilgan kalit bor-yo'qligini tekshiruvchi dastur
+4.5 Lug'atdagi eng katta qiymatga ega kalitni topuvchi dastur
+4.6 Ikki lug'atni birlashtiruvchi dastur
+4.7 Lug'atdagi qiymatlar yig'indisini hisoblovchi dastur
+4.8 Lug'atdagi har bir qiymatga 1 qo'shuvchi dastur
+4.9 Lug'atdagi kalit-qiymat juftliklarini teskari tartibda chiqaruvchi dastur
+4.10 Satrdagi harflarni sanab lug'at qiluvchi dastur
+4.11 Telefon kitobchasini boshqaruvchi dastur (qo'shish, o'chirish, qidirish)
+4.12 Mahsulotlar lug'atidan eng qimmat mahsulotni topuvchi dastur
+4.13 Talabalar baholaridan o'rtacha bahoni hisoblovchi dastur
+4.14 Lug'atdan berilgan qiymatga ega barcha kalitlarni topuvchi dastur
+4.15 So'zlar lug'atidan uzunligi N dan katta bo'lgan so'zlarni chiqaruvchi dastur
+4.16 JSON formatdagi ma'lumotlarni lug'atga o'tkazuvchi dastur
+4.17 Talabalar ma'lumotlarini fayldan o'qib lug'at yaratuvchi dastur
+4.18 Mahsulotlar sonini kamaytirish yoki ko'paytirish imkoniyati bo'lgan dastur
+4.19 Lug'atdagi kalitlarni alifbo tartibida chiqaruvchi dastur
+4.20 So'zlar va ularning ma'nolaridan iborat lug'at yaratuvchi dastur
+
+5. Funksiyalar (Functions) (25 masala)
+5.1 Ikki sonning EKUBini (eng katta umumiy bo'luvchi) hisoblovchi funksiya
+5.2 Sonning tub yoki tub emasligini aniqlovchi funksiya
+5.3 Berilgan oralikdagi tub sonlarni topuvchi funksiya
+5.4 Sonning faktorialini hisoblovchi funksiya
+5.5 Fibonacci ketma-ketligining N-hadini hisoblovchi funksiya
+5.6 Sonning darajasini hisoblovchi funksiya (pow ishlatmasdan)
+5.7 Matnni shifrlovchi funksiya (har bir harfni keyingi harfga almashtirish)
+5.8 Raqamlar yig'indisi 10 dan katta bo'lgan sonlarni topuvchi funksiya
+5.9 Massivni o'sish tartibida tekshiruvchi funksiya
+5.10 Funksiya orqali to'g'ri to'rtburchakning yuzini hisoblash
+5.11 Argument sifatida sonlar ro'yxatini olib, ularni kvadratga ko'taruvchi funksiya
+5.12 Funksiya orqali matndagi so'zlarni uzunligi bo'yicha tartiblash
+5.13 Takrorlanmas raqamlardan iborat sonni tekshiruvchi funksiya
+5.14 Rekursiya orqali sonning raqamlari yig'indisini hisoblash
+5.15 Funksiya orqali telefon raqamini formatlash
+5.16 Argumentlar soni noaniq bo'lgan funksiya yozish (*args)
+5.17 Kalit so'z argumentlari bilan ishlovchi funksiya (**kwargs)
+5.18 Vazifa bajarish vaqti hisoblovchi dekorator yozish
+5.19 Funksiyani N marta chaqiruvchi dekorator yozish
+5.20 Faqat juft sonlarni qabul qiluvchi funksiya yozish (dekorator orqali)
+5.21 Lambda funksiya orqali sonning kvadratini hisoblash
+5.22 map() funksiyasi orqali ro'yxatdagi sonlarni ikkiga ko'paytirish
+5.23 filter() funksiyasi orqali ro'yxatdagi juft sonlarni ajratish
+5.24 reduce() funksiyasi orqali ro'yxatdagi sonlarni ko'paytmasini hisoblash
+5.25 Funksiyani keshleydigan (natijani saqlovchi) dekorator yozish
+
+6. Fayllar bilan ishlash (15 masala)
+6.1 Faylga matn yozuvchi dastur
+6.2 Fayldan matnni o'qib, ekranga chiqaruvchi dastur
+6.3 Fayldagi satrlar sonini hisoblovchi dastur
+6.4 Fayldagi so'zlar sonini hisoblovchi dastur
+6.5 Faylning nusxasini yaratuvchi dastur
+6.6 CSV fayldan ma'lumotlarni o'qib, lug'at qilib chiqaruvchi dastur
+6.7 Log faylini yaratuvchi dastur (vaqt va harakatlarni yozib borish)
+6.8 Fayldagi ma'lumotlarni teskari tartibda yangi faylga yozuvchi dastur
+6.9 Fayldan berilgan so'zni qidiruvchi dastur
+6.10 Fayl hajmini hisoblovchi dastur (baytlarda)
+6.11 JSON formatdagi ma'lumotlarni fayldan o'qib, ishlovchi dastur
+6.12 Fayldagi har bir satrning uzunligini hisoblovchi dastur
+6.13 Bir nechta fayllarni bitta faylga birlashtiruvchi dastur
+6.14 Fayldagi har bir belgining chastotasini hisoblovchi dastur
+6.15 Faylni shifrlovchi va deshifrlovchi dastur
+
+7. Kompleks loyihalar (20+ masala)
+7.1 Oddiy kalkulyator dasturi (+, -, ×, ÷)
+7.2 Parol generatori (belgilar uzunligini tanlash imkoniyati bilan)
+7.3 Vazifalar boshqaruvchi (TODO list)
+7.4 Quiz dasturi (savollar bazasidan tasodifiy savollar)
+7.5 Valyuta konvertori (dollar, euro, rubl)
+7.6 Telefon kitobchasi
+7.7 Boshqotirma (puzzle) yechish dasturi
+7.8 Tahlil dasturi (matn statistikasi)
+7.9 Xonimlar va yovuz odamlar masalasini yechish
+7.10 Bank hisobini boshqarish dasturi
+7.11 Do'kon inventarizatsiyasini boshqarish
+7.12 Talabalar baholarini hisoblash tizimi
+7.13 To'g'ri javob berilgacha davom etadigan test dasturi
+7.14 Tic-tac-toe o'yini
+7.15 Hangman o'yini (so'zni topish)
+7.16 Sodda chat-bot
+7.17 Ish vaqti hisoblagich
+7.18 Xarajatlarni kuzatish dasturi
+7.19 Kunlik ob-havo ma'lumotlarini saqlash dasturi
+7.20 Kitob kutubxonasini boshqarish dasturi
+
+8. Qo'shimcha mashqlar (10+ masala)
+8.1 Random son generatori orqali lotereya dasturi
+8.2 Matndan HTML teglarini olib tashlovchi dastur
+8.3 Sonni rim raqamlariga o'tkazuvchi dastur
+8.4 Satrni Morse kodiga o'tkazuvchi dastur
+8.5 Binary qidiruv (binary search) algoritmini amalga oshirish
+8.6 Bubble sort algoritmini amalga oshirish
+8.7 Matrixni transponirlash dasturi
+8.8 Grafik chizish uchun matnli interfays
+8.9 Sodda hash funksiyasi yaratish
+8.10 Ish kunlarini hisoblash dasturi (dam olish kunlarini hisobga olgan holda)
+
+JAVOBLARI
+
+# 1.1
+name = input("Ismingizni kiriting: ")
+print(f"Salom, {name}!")
+
+# 1.2
+pi = 3.14159
+r = float(input("Radius: "))
+print("Doira yuzi:", pi * r ** 2)
+
+# 1.3
+a = float(input("a = "))
+b = float(input("b = "))
+print("Yig'indi:", a + b)
+print("Ayirma:", a - b)
+print("Ko'paytma:", a * b)
+print("Bo'linma:", a / b if b != 0 else "Nolga bo'lib bo'lmaydi")
+
+# 1.4
+c = float(input("Celsius: "))
+f = c * 9/5 + 32
+print(f"{c}°C = {f:.2f}°F")
+f2 = float(input("Fahrenheit: "))
+c2 = (f2 - 32) * 5/9
+print(f"{f2}°F = {c2:.2f}°C")
+
+# 1.5
+import math
+a = float(input("Katet 1: "))
+b = float(input("Katet 2: "))
+print("Gipotenuza:", math.sqrt(a**2 + b**2))
+
+# 1.6
+n = int(input("Son: "))
+print("Juft" if n % 2 == 0 else "Toq")
+
+# 1.7
+x = float(input("Son: "))
+if x > 0: print("Musbat")
+elif x < 0: print("Manfiy")
+else: print("Nol")
+
+# 1.8
+a, b, c = map(float, input("Uchta son: ").split())
+print("Eng kattasi:", max(a, b, c))
+
+# 1.9
+s = int(input("Sekund: "))
+h = s // 3600
+m = (s % 3600) // 60
+sec = s % 60
+print(f"{h:02}:{m:02}:{sec:02}")
+
+# 1.10
+n = int(input("Son: "))
+for d in [2, 3, 5]:
+    print(f"{n} {d} ga {'bo\'linadi' if n % d == 0 else 'bo\'linmaydi'}")
+
+# 1.11
+n = input("Son (string sifatida): ")
+print("Raqamlar yig'indisi:", sum(int(d) for d in n if d.isdigit()))
+
+# 1.12
+n = input("Son: ")
+print("Teskari:", n[::-1])
+
+# 1.13
+import math
+a = float(input("a: "))
+b = float(input("b: "))
+c = float(input("c: "))
+D = b**2 - 4*a*c
+if D < 0:
+    print("Haqiqiy ildiz yo'q")
+elif D == 0:
+    x = -b / (2*a)
+    print("Bitta ildiz:", x)
+else:
+    x1 = (-b + math.sqrt(D)) / (2*a)
+    x2 = (-b - math.sqrt(D)) / (2*a)
+    print("Ildizlar:", x1, x2)
+
+# 1.14
+kg = float(input("Kilogramm: "))
+pound = kg * 2.20462
+print(f"{kg} kg = {pound:.2f} funt")
+p = float(input("Funt: "))
+kg2 = p / 2.20462
+print(f"{p} funt = {kg2:.2f} kg")
+
+# 1.15
+p = float(input("Boshlang'ich summa: "))
+r = float(input("Foiz (%): "))
+years = 5
+for i in range(1, years+1):
+    p = p * (1 + r/100)
+print(f"5 yildan keyin: {p:.2f}")
+
+# 1.16
+n = int(input("Uch xonali son: "))
+yuzlik = n // 100
+onlik = (n % 100) // 10
+birlik = n % 10
+print(f"Yuzlik: {yuzlik}, O'nlik: {onlik}, Birlik: {birlik}")
+
+# 1.17
+soat = int(input("Soat: "))
+daq = int(input("Daqiqa: "))
+jami_minut = soat * 60 + daq
+print(f"Jami minut: {jami_minut}")
+
+# 1.18
+a, b, c = map(float, input("Uchta son: ").split())
+print("O'rtacha:", (a + b + c) / 3)
+
+# 1.19
+N = int(input("N = "))
+print("Yig'indi:", sum(range(1, N+1)))
+
+# 1.20
+nums = list(map(int, input("4 ta son: ").split()))
+juftlar = [x for x in nums if x % 2 == 0]
+print("Juftlar:", juftlar)
+
+# 1.21
+n = int(input("Son: "))
+print(f"Kvadrati: {n**2}, Kubi: {n**3}")
+
+# 1.22
+for i in range(3):
+    b1, b2, b3 = map(float, input(f"Talaba {i+1} baholari: ").split())
+    print(f"O'rtacha: {(b1+b2+b3)/3:.2f}")
+
+# 1.23
+r = float(input("Radius: "))
+print("Aylana uzunligi:", 2 * 3.14159 * r)
+
+# 1.24
+v0 = float(input("Boshlang'ich tezlik: "))
+a = float(input("Tezlanish: "))
+t = float(input("Vaqt: "))
+s = v0 * t + 0.5 * a * t**2
+print("Masofa:", s)
+
+# 1.25
+a = float(input("Tomon A: "))
+b = float(input("Tomon B: "))
+print("Perimetr:", 2*(a+b))
+print("Yuzi:", a*b)
+
+# 1.26
+N = int(input("Sekundlar soni: "))
+soat = (N // 3600) % 24
+minut = (N % 3600) // 60
+sekund = N % 60
+print(f"Soat: {soat:02}:{minut:02}:{sekund:02}")
+
+# 3.8
+print("Takrorlanmagan:", list(dict.fromkeys(lst)))
+
+# 3.9 (sort ishlatmasdan — bubble sort)
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+print("Tartiblangan:", bubble_sort(lst.copy()))
+
+# 3.10
+if len(lst) >= 2:
+    lst[0], lst[-1] = lst[-1], lst[0]
+print("Almashtirilgan:", lst)
+
+# 3.11
+n = int(input("N marta aylantirish: "))
+rotated = lst[n % len(lst):] + lst[:n % len(lst)]
+print("Aylantirilgan:", rotated)
+
+# 3.12
+from functools import reduce
+import operator
+print("Ko'paytma:", reduce(operator.mul, lst, 1))
+
+# 3.13
+print("Musbatlar:", [x for x in lst if x > 0])
+
+# 3.14
+print("Kvadratlar:", [x**2 for x in lst])
+
+# 3.15
+mixed = [1, "salom", 2, "dunyo"]
+print("Satrlar soni:", sum(1 for x in mixed if isinstance(x, str)))
+
+# 3.16
+juft_indeks = lst[::2]
+toq_indeks = lst[1::2]
+print("Juft indekslar:", juft_indeks)
+print("Toq indekslar:", toq_indeks)
+
+# 3.17
+print("Satrga aylantirilgan:", ''.join(map(str, lst)))
+
+# 3.18
+from collections import Counter
+most_common = Counter(lst).most_common(1)[0][0]
+print("Eng ko'p takrorlangan:", most_common)
+
+# 3.19
+nested = [[1,2], [3,4], [5]]
+flattened = [item for sublist in nested for item in sublist]
+print("Yassi ro'yxat:", flattened)
+
+# 3.20
+idx = int(input("Indeks: "))
+if 0 <= idx < len(lst):
+    del lst[idx]
+print("O'chirilgan:", lst)
+
+# 3.21
+def insert_sorted(lst, x):
+    lst.append(x)
+    return sorted(lst)
+print("Tartiblangan qo'shish:", insert_sorted([1,3,5], 4))
+
+# 3.22
+for i, val in enumerate(lst):
+    print(f"Indeks {i}: {val}")
+
+# 3.23
+counts = Counter(lst)
+print("Takrorlanishlar:", dict(counts))
+
+# 3.24
+lst1 = [1,2,3,4]
+lst2 = [3,4,5,6]
+intersection = list(set(lst1) & set(lst2))
+print("Kesishma:", intersection)
+
+# 3.25
+import random
+random.shuffle(lst)
+print("Aralashtirilgan:", lst)
+
+
+# ==================================================
+# 4. Lug'atlar (4.1 – 4.20)
+# ==================================================
+
+# 4.1
+talabalar = {
+    1: {"ism": "Ali", "familiya": "Valiyev", "yosh": 20},
+    2: {"ism": "Olim", "familiya": "Karimov", "yosh": 22}
+}
+print("Talabalar:", talabalar)
+
+# 4.2
+print("Kalitlar:", list(talabalar.keys()))
+
+# 4.3
+print("Qiymatlar:", list(talabalar.values()))
+
+# 4.4
+kalit = int(input("ID: "))
+print("Bor" if kalit in talabalar else "Yo'q")
+
+# 4.5
+baholar = {"Ali": 85, "Olim": 92, "Soli": 78}
+eng_yaxshi = max(baholar, key=baholar.get)
+print("Eng yaxshi:", eng_yaxshi)
+
+# 4.6
+dict1 = {"a": 1, "b": 2}
+dict2 = {"c": 3, "d": 4}
+birlashtirilgan = {**dict1, **dict2}
+print("Birlashtirilgan:", birlashtirilgan)
+
+# 4.7
+print("Yig'indi:", sum(baholar.values()))
+
+# 4.8
+yangi_baholar = {k: v + 1 for k, v in baholar.items()}
+print("Yangilangan:", yangi_baholar)
+
+# 4.9
+print("Teskari tartibda:")
+for k, v in reversed(list(baholar.items())):
+    print(k, v)
+
+# 4.10
+matn = input("Matn: ")
+hisob = {}
+for c in matn.lower():
+    if c.isalpha():
+        hisob[c] = hisob.get(c, 0) + 1
+print("Harflar hisobi:", hisob)
+
+# 4.11
+telefon_kitob = {}
+while True:
+    amal = input("Amal (qo'shish/o'chirish/qidirish/chiqish): ")
+    if amal == "chiqish":
+        break
+    elif amal == "qo'shish":
+        ism = input("Ism: ")
+        raqam = input("Raqam: ")
+        telefon_kitob[ism] = raqam
+    elif amal == "qidirish":
+        ism = input("Ism: ")
+        print(telefon_kitob.get(ism, "Topilmadi"))
+    elif amal == "o'chirish":
+        ism = input("Ism: ")
+        telefon_kitob.pop(ism, None)
+
+# 4.12
+mahsulotlar = {"Olma": 12000, "Banan": 15000, "Apelsin": 10000}
+eng_qimmat = max(mahsulotlar, key=mahsulotlar.get)
+print("Eng qimmat:", eng_qimmat)
+
+# 4.13
+talaba_baholar = {"Ali": [85, 90, 78], "Olim": [92, 88, 95]}
+orta_baholar = {k: sum(v)/len(v) for k, v in talaba_baholar.items()}
+print("O'rtacha baholar:", orta_baholar)
+
+# 4.14
+qiymat = int(input("Qiymat: "))
+kalitlar = [k for k, v in mahsulotlar.items() if v == qiymat]
+print("Kalitlar:", kalitlar)
+
+# 4.15
+sozlar = {"kitob": "book", "uy": "house", "daraxt": "tree"}
+N = int(input("Minimal uzunlik: "))
+uzun_sozlar = {k: v for k, v in sozlar.items() if len(k) > N}
+print("Uzun so'zlar:", uzun_sozlar)
+
+# 4.16
+import json
+json_str = '{"ism": "Ali", "yosh": 20}'
+lugat = json.loads(json_str)
+print("Lug'at:", lugat)
+
+# 4.17 (namuna)
+# Fayl mavjud deb taxmin qilamiz: talabalar.txt
+# Format: ID,ism,familiya,yosh
+try:
+    with open("talabalar.txt", "r") as f:
+        talabalar_fayl = {}
+        for line in f:
+            parts = line.strip().split(',')
+            talabalar_fayl[int(parts[0])] = {
+                "ism": parts[1],
+                "familiya": parts[2],
+                "yosh": int(parts[3])
+            }
+    print("Fayldan lug'at:", talabalar_fayl)
+except FileNotFoundError:
+    print("Fayl topilmadi (namuna)")
+
+# 4.18
+mahsulotlar_soni = {"Olma": 10, "Banan": 5}
+nom = input("Mahsulot: ")
+if nom in mahsulotlar_soni:
+    amal = input("Kamaytirish (+/-): ")
+    if amal == "+":
+        mahsulotlar_soni[nom] += 1
+    elif amal == "-":
+        mahsulotlar_soni[nom] = max(0, mahsulotlar_soni[nom] - 1)
+print("Yangilangan:", mahsulotlar_soni)
+
+# 4.19
+print("Alifbo bo'yicha kalitlar:", sorted(talabalar.keys()))
+
+# 4.20
+lugat = {}
+while True:
+    soz = input("So'z (yoki 'stop'): ")
+    if soz == "stop":
+        break
+    manosi = input("Ma'nosi: ")
+    lugat[soz] = manosi
+print("Lug'at:", lugat)
+
+
+# ==================================================
+# 5. Funksiyalar (5.1 – 5.25)
+# ==================================================
+
+# 5.1
+def ekub(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+print("EKUB:", ekub(48, 18))
+
+# 5.2
+def tubmi(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+print("Tubmi?", tubmi(17))
+
+# 5.3
+def tublar(a, b):
+    return [n for n in range(a, b+1) if tubmi(n)]
+print("Tublar:", tublar(10, 30))
+
+# 5.4
+def faktorial(n):
+    return 1 if n <= 1 else n * faktorial(n-1)
+print("Faktorial:", faktorial(5))
+
+# 5.5
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+print("Fibonacci:", fibonacci(7))
+
+# 5.6
+def daraja(x, n):
+    if n == 0:
+        return 1
+    if n < 0:
+        return 1 / daraja(x, -n)
+    result = 1
+    for _ in range(n):
+        result *= x
+    return result
+print("Daraja:", daraja(2, 5))
+
+# 5.7
+def shifrlash(matn):
+    return ''.join(chr(ord(c) + 1) if c.isalpha() else c for c in matn)
+print("Shifr:", shifrlash("salom"))
+
+# 5.8
+def raqam_yigindi_10(lst):
+    return [n for n in lst if sum(int(d) for d in str(n)) > 10]
+print("Raqam yig'indisi >10:", raqam_yigindi_10([123, 45, 67]))
+
+# 5.9
+def o_sish_tartibida(lst):
+    return all(lst[i] <= lst[i+1] for i in range(len(lst)-1))
+print("O'sish tartibida?", o_sish_tartibida([1,2,3,4]))
+
+# 5.10
+def to_girtburchak_yuzi(a, b):
+    return a * b
+print("Yuzi:", to_girtburchak_yuzi(5, 10))
+
+# 5.11
+def kvadratlar(lst):
+    return [x**2 for x in lst]
+print("Kvadratlar:", kvadratlar([1,2,3]))
+
+# 5.12
+def soz_uzunlik_tartib(matn):
+    sozlar = matn.split()
+    return ' '.join(sorted(sozlar, key=len))
+print("Tartiblangan:", soz_uzunlik_tartib("salom dunyo python"))
+
+# 5.13
+def takrorlanmas_raqam(n):
+    s = str(n)
+    return len(s) == len(set(s))
+print("Takrorlanmas?", takrorlanmas_raqam(123))
+
+# 5.14
+def raqam_yigindi_rekursiya(n):
+    if n == 0:
+        return 0
+    return n % 10 + raqam_yigindi_rekursiya(n // 10)
+print("Rekursiv yig'indi:", raqam_yigindi_rekursiya(123))
+
+# 5.15
+def format_tel(raqam):
+    if len(raqam) == 12 and raqam.isdigit():
+        return f"+{raqam[:3]} {raqam[3:5]} {raqam[5:8]} {raqam[8:10]} {raqam[10:]}"
+    return "Noto'g'ri"
+print("Formatlangan:", format_tel("998901234567"))
+
+# 5.16
+def yigindi_args(*args):
+    return sum(args)
+print("Yig'indi (*args):", yigindi_args(1,2,3,4))
+
+# 5.17
+def chop_et_kwargs(**kwargs):
+    for k, v in kwargs.items():
+        print(f"{k}: {v}")
+chop_et_kwargs(ism="Ali", yosh=20)
+
+# 5.18
+import time
+def vaqt_hisobla(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} {end - start:.4f} soniya ketdi")
+        return result
+    return wrapper
+
+@vaqt_hisobla
+def sekin_funksiya():
+    time.sleep(1)
+sekin_funksiya()
+
+# 5.19
+def n_marta_chaqir(n):
+    def dekorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(n):
+                func(*args, **kwargs)
+        return wrapper
+    return dekorator
+
+@n_marta_chaqir(3)
+def salom():
+    print("Salom!")
+salom()
+
+# 5.20
+def faqat_juft(func):
+    def wrapper(*args, **kwargs):
+        for arg in args:
+            if not isinstance(arg, int) or arg % 2 != 0:
+                raise ValueError("Faqat juft sonlar!")
+        return func(*args, **kwargs)
+    return wrapper
+
+@faqat_juft
+def juft_yigindi(*sonlar):
+    return sum(sonlar)
+print("Juft yig'indi:", juft_yigindi(2, 4, 6))
+
+# 5.21
+kvadrat = lambda x: x ** 2
+print("Lambda kvadrat:", kvadrat(5))
+
+# 5.22
+sonlar = [1,2,3,4]
+ikki_marta = list(map(lambda x: x*2, sonlar))
+print("Map:", ikki_marta)
+
+# 5.23
+juftlar = list(filter(lambda x: x % 2 == 0, sonlar))
+print("Filter:", juftlar)
+
+# 5.24
+from functools import reduce
+kopaytma = reduce(lambda x, y: x * y, sonlar)
+print("Reduce:", kopaytma)
+
+# 5.25
+def keshla(func):
+    kesh = {}
+    def wrapper(*args):
+        if args in kesh:
+            return kesh[args]
+        natija = func(*args)
+        kesh[args] = natija
+        return natija
+    return wrapper
+
+@keshla
+def sekin_kvadrat(x):
+    time.sleep(1)
+    return x ** 2
+print(sekin_kvadrat(5))  # 1 soniya
+print(sekin_kvadrat(5))  # 0 soniya
+
+
+# ==================================================
+# 6. Fayllar bilan ishlash (6.1 – 6.15)
+# ==================================================
+
+# 6.1
+with open("matn.txt", "w") as f:
+    f.write("Salom, dunyo!")
+
+# 6.2
+with open("matn.txt", "r") as f:
+    print("Fayl matni:", f.read())
+
+# 6.3
+with open("matn.txt", "r") as f:
+    satrlar = f.readlines()
+    print("Satrlar soni:", len(satrlar))
+
+# 6.4
+with open("matn.txt", "r") as f:
+    matn = f.read()
+    sozlar = matn.split()
+    print("So'zlar soni:", len(sozlar))
+
+# 6.5
+with open("matn.txt", "r") as f1, open("nusxa.txt", "w") as f2:
+    f2.write(f1.read())
+print("Nusxa yaratildi")
+
+# 6.6 (namuna CSV)
+with open("data.csv", "w") as f:
+    f.write("ism,yosh\nAli,20\nOlim,22")
+with open("data.csv", "r") as f:
+    keys = f.readline().strip().split(',')
+    data = []
+    for line in f:
+        values = line.strip().split(',')
+        data.append(dict(zip(keys, values)))
+print("CSV dan lug'at:", data)
+
+# 6.7
+import datetime
+with open("log.txt", "a") as f:
+    f.write(f"[{datetime.datetime.now()}] Dastur ishga tushdi\n")
+
+# 6.8
+with open("matn.txt", "r") as f:
+    qatorlar = f.readlines()
+with open("teskari.txt", "w") as f:
+    f.writelines(reversed(qatorlar))
+
+# 6.9
+soz = "salom"
+with open("matn.txt", "r") as f:
+    if soz in f.read():
+        print("So'z topildi")
+    else:
+        print("So'z topilmadi")
+
+# 6.10
+import os
+print("Fayl hajmi:", os.path.getsize("matn.txt"), "bayt")
+
+# 6.11
+with open("data.json", "w") as f:
+    f.write('{"ism": "Ali", "yosh": 20}')
+import json
+with open("data.json", "r") as f:
+    data = json.load(f)
+    print
+# ==================================================
+# 6. Fayllar bilan ishlash (Davomi)
+# ==================================================
+
+# 6.12 Fayldagi har bir satrning uzunligini hisoblovchi dastur
+def fayl_satrlar_uzunligi():
+    filename = input("Fayl nomini kiriting: ")
+    try:
+        with open(filename, 'r', encoding='utf-8') as f:
+            for i, line in enumerate(f, 1):
+                print(f"Satr {i}: {len(line.rstrip())} ta belgi")
+    except FileNotFoundError:
+        print("Fayl topilmadi!")
+
+# 6.13 Bir nechta fayllarni bitta faylga birlashtiruvchi dastur
+def fayllarni_birlashtir():
+    fayl_nomi = input("Chiqish fayli nomi (masalan: birlashtirilgan.txt): ")
+    fayllar = input("Birlashtiriladigan fayllar (vergul bilan ajrating): ").split(',')
+
+    with open(fayl_nomi, 'w', encoding='utf-8') as out_file:
+        for fayl in fayllar:
+            fayl = fayl.strip()
+            try:
+                with open(fayl, 'r', encoding='utf-8') as in_file:
+                    out_file.write(f"--- {fayl} ---\n")
+                    out_file.write(in_file.read())
+                    out_file.write("\n\n")
+                print(f"{fayl} muvaffaqiyatli qo'shildi.")
+            except FileNotFoundError:
+                print(f"{fayl} topilmadi!")
+    print(f"Barcha fayllar {fayl_nomi} ga yozildi.")
+
+# 6.14 Fayldagi har bir belgining chastotasini hisoblovchi dastur
+def belgi_chastotasi():
+    filename = input("Fayl nomini kiriting: ")
+    try:
+        with open(filename, 'r', encoding='utf-8') as f:
+            matn = f.read().lower()
+        
+        chastota = {}
+        for belgi in matn:
+            if belgi.isalpha():
+                chastota[belgi] = chastota.get(belgi, 0) + 1
+
+        print("\nHarflar chastotasi:")
+        for harf in sorted(chastota):
+            print(f"'{harf}': {chastota[harf]} marta")
+    except FileNotFoundError:
+        print("Fayl topilmadi!")
+
+# 6.15 Faylni shifrlovchi va deshifrlovchi dastur
+def shifrla(matn, kalit=3):
+    natija = ""
+    for c in matn:
+        if c.isalpha():
+            base = ord('A') if c.isupper() else ord('a')
+            natija += chr((ord(c) - base + kalit) % 26 + base)
+        else:
+            natija += c
+    return natija
+
+def deshifrla(matn, kalit=3):
+    return shifrla(matn, -kalit)
+
+def faylni_shifrla_deshifrla():
+    kirish = input("Shifrlanadigan fayl: ")
+    chiqish = input("Shifrlangan fayl nomi: ")
+    kalit = int(input("Kalit (son): "))
+
+    try:
+        with open(kirish, 'r', encoding='utf-8') as f:
+            matn = f.read()
+        shifr_matn = shifrla(matn, kalit)
+        with open(chiqish, 'w', encoding='utf-8') as f:
+            f.write(shifr_matn)
+        print("Fayl shifrlab yozildi!")
+
+        deshifr_fayl = "deshifrlangan_" + kirish
+        with open(deshifr_fayl, 'w', encoding='utf-8') as f:
+            f.write(deshifrla(shifr_matn, kalit))
+        print("Deshifrlangan nusxa ham yaratildi.")
+    except FileNotFoundError:
+        print("Kirish fayli topilmadi!")
+
+
+# ==================================================
+# 7. Kompleks loyihalar
+# ==================================================
+
+# 7.1 Oddiy kalkulyator
+def kalkulyator():
+    while True:
+        ifoda = input("Ifoda (1 + 2) yoki 'exit': ").strip()
+        if ifoda.lower() == 'exit':
+            break
+        try:
+            if any(op in ifoda for op in ['+', '-', '*', '/']) and all(c.isdigit() or c in '+-*/. ' for c in ifoda):
+                natija = eval(ifoda)
+                print("Natija:", natija)
+            else:
+                print("Noto'g'ri ifoda!")
+        except:
+            print("Xatolik yuz berdi!")
+
+# 7.2 Parol generatori
+def parol_generatori():
+    import random, string
+    uzunlik = int(input("Parol uzunligi: "))
+    belgilar = string.ascii_letters + string.digits + "!@#$%^&*"
+    parol = ''.join(random.choice(belgilar) for _ in range(uzunlik))
+    print("Sizning parolingiz:", parol)
+
+# 7.3 TODO list
+def todo_list():
+    todo = []
+    while True:
+        print("\n1. Qo'shish\n2. Ko'rish\n3. O'chirish\n4. Chiqish")
+        tanlov = input("Tanlang: ")
+        if tanlov == '1':
+            vazifa = input("Vazifa: ")
+            todo.append(vazifa)
+        elif tanlov == '2':
+            for i, v in enumerate(todo, 1):
+                print(f"{i}. {v}")
+        elif tanlov == '3':
+            if todo:
+                idx = int(input("O'chirish uchun raqam: ")) - 1
+                if 0 <= idx < len(todo):
+                    del todo[idx]
+        elif tanlov == '4':
+            break
+
+# 7.4 Quiz dasturi
+def quiz():
+    savollar = [
+        {"savol": "O'zbekiston poytaxti?", "javob": "Toshkent"},
+        {"savol": "2+2?", "javob": "4"},
+        {"savol": "Python tilida 'salom' qanday?", "javob": "print('salom')"}
+    ]
+    import random
+    random.shuffle(savollar)
+    ball = 0
+    for s in savollar:
+        javob = input(s["savol"] + " ")
+        if javob.strip().lower() == s["javob"].lower():
+            ball += 1
+            print("✅ To'g'ri!")
+        else:
+            print("❌ Noto'g'ri. To'g'ri javob:", s["javob"])
+    print(f"Siz {ball}/{len(savollar)} to'g'ri javob berdingiz.")
+
+# 7.5 Valyuta konvertori
+def valyuta_konvertori():
+    kurslar = {"USD": 1, "EUR": 0.93, "RUB": 92.5}
+    miqdor = float(input("Miqdor: "))
+    valyuta = input("Valyuta (USD/EUR/RUB): ").upper()
+    maqsad = input("O'tkazish valyutasi (USD/EUR/RUB): ").upper()
+
+    if valyuta in kurslar and maqsad in kurslar:
+        usd = miqdor / kurslar[valyuta]
+        natija = usd * kurslar[maqsad]
+        print(f"{miqdor} {valyuta} = {natija:.2f} {maqsad}")
+    else:
+        print("Noto'g'ri valyuta!")
+
+# 7.6 Telefon kitobchasi
+def telefon_kitobchasi():
+    kitob = {}
+    while True:
+        print("\n1. Qo'shish\n2. Qidirish\n3. Ro'yxat\n4. Chiqish")
+        t = input("Tanlov: ")
+        if t == '1':
+            ism = input("Ism: ")
+            raqam = input("Raqam: ")
+            kitob[ism] = raqam
+        elif t == '2':
+            ism = input("Ism: ")
+            print(kitob.get(ism, "Topilmadi"))
+        elif t == '3':
+            for k, v in kitob.items():
+                print(f"{k}: {v}")
+        elif t == '4':
+            break
+
+# 7.7 Boshqotirma (puzzle) — izoh
+def puzzle_izoh():
+    print("Bu masala algoritmik yechimga ega (A* algoritmi).")
+    print("To'liq kod juda uzun. Namuna sifatida yechim ketma-ketligi:")
+    print("1. Ikki yovuz → o'ng\n2. Biri qaytadi\n3. Ikki xonim → o'ng...")
+
+# 7.8 Matn tahlili
+def matn_tahlili():
+    matn = input("Matn kiriting: ")
+    sozlar = matn.split()
+    harflar = [c for c in matn if c.isalpha()]
+    print("So'zlar soni:", len(sozlar))
+    print("Harflar soni:", len(harflar))
+    if sozlar:
+        print("O'rtacha so'z uzunligi:", round(len(harflar) / len(sozlar), 2))
+
+# 7.10 Bank hisobi
+def bank_hisobi():
+    balans = 0
+    while True:
+        print(f"\nBalans: ${balans:.2f}")
+        print("1. Depozit\n2. Yechish\n3. Chiqish")
+        t = input("Tanlov: ")
+        if t == '1':
+            miqdor = float(input("Miqdor: "))
+            if miqdor > 0:
+                balans += miqdor
+        elif t == '2':
+            miqdor = float(input("Miqdor: "))
+            if 0 < miqdor <= balans:
+                balans -= miqdor
+            else:
+                print("Yetarli mablag' yo'q!")
+        elif t == '3':
+            break
+
+# 7.11 Do'kon inventarizatsiyasi
+def do_kon_inventar():
+    inventar = {"Olma": 10, "Banan": 5}
+    while True:
+        print("\n1. Mahsulot qo'shish\n2. Sotish\n3. Holat\n4. Chiqish")
+        t = input("Tanlov: ")
+        if t == '1':
+            nom = input("Mahsulot: ")
+            miqdor = int(input("Miqdor: "))
+            inventar[nom] = inventar.get(nom, 0) + miqdor
+        elif t == '2':
+            nom = input("Mahsulot: ")
+            if nom in inventar and inventar[nom] > 0:
+                inventar[nom] -= 1
+                if inventar[nom] == 0:
+                    del inventar[nom]
+        elif t == '3':
+            print(inventar)
+        elif t == '4':
+            break
+
+# 7.12 Talabalar baholari
+def talaba_baholari():
+    talabalar = {}
+    while True:
+        ism = input("Talaba ismi (yoki 'hisobla'): ")
+        if ism == "hisobla":
+            break
+        baholar = list(map(int, input("Baholar (bo'sh joy bilan): ").split()))
+        talabalar[ism] = sum(baholar) / len(baholar)
+    print("\nO'rtacha baholar:")
+    for ism, baho in talabalar.items():
+        print(f"{ism}: {baho:.2f}")
+
+# 7.13 To'g'ri javobgacha test
+def test_davom_et():
+    while True:
+        javob = input("2 + 2 = ? ")
+        if javob == "4":
+            print("✅ To'g'ri!")
+            break
+        else:
+            print("❌ Qayta urinib ko'ring.")
+
+# 7.14 Tic-tac-toe
+def tic_tac_toe():
+    board = [" "] * 9
+    def chop_et():
+        for i in range(0, 9, 3):
+            print("|".join(board[i:i+3]))
+    def golibmi():
+        g = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+        for komb in g:
+            if board[komb[0]] == board[komb[1]] == board[komb[2]] != " ":
+                return board[komb[0]]
+        return None
+    for i in range(9):
+        chop_et()
+        player = "X" if i % 2 == 0 else "O"
+        while True:
+            try:
+                k = int(input(f"{player} uchun indeks (0-8): "))
+                if board[k] == " ":
+                    board[k] = player
+                    break
+                else:
+                    print("Band joy!")
+            except:
+                print("Noto'g'ri kiritish!")
+        g = golibmi()
+        if g:
+            chop_et()
+            print(f"{g} yutdi!")
+            return
+    chop_et()
+    print("Durrang!")
+
+# 7.15 Hangman
+def hangman():
+    import random
+    sozlar = ["python", "dasturlash", "kompyuter", "algoritm"]
+    soz = random.choice(sozlar)
+    taxmin = ["_"] * len(soz)
+    urinish = 6
+    while urinish > 0 and "_" in taxmin:
+        print(" ".join(taxmin), f"Qolgan urinish: {urinish}")
+        harf = input("Harf: ").lower()
+        if harf in soz:
+            for i, c in enumerate(soz):
+                if c == harf:
+                    taxmin[i] = harf
+        else:
+            urinish -= 1
+    if "_" not in taxmin:
+        print("Yutdingiz! So'z:", soz)
+    else:
+        print("Yutqazdingiz! So'z:", soz)
+
+# 7.16 Chat-bot
+def chat_bot():
+    while True:
+        sorov = input("Siz: ").lower()
+        if "salom" in sorov:
+            print("Bot: Salom! Sizga qanday yordam bera olaman?")
+        elif "rahmat" in sorov:
+            print("Bot: Arzimaydi! Yana murojaat qiling.")
+        elif "isming" in sorov:
+            print("Bot: Men Python Assistantman.")
+        elif "vaqt" in sorov:
+            from datetime import datetime
+            print("Bot:", datetime.now().strftime("%H:%M"))
+        elif "chiqish" in sorov:
+            print("Bot: Xayr!")
+            break
+        else:
+            print("Bot: Kechirasiz, tushunmadim.")
+
+# 7.17 Ish vaqti hisoblagich
+def ish_vaqti():
+    from datetime import datetime
+    boshlanish = datetime.now()
+    input("Ishni tugatish uchun Enter bosing...")
+    tugash = datetime.now()
+    farq = tugash - boshlanish
+    print(f"Ish vaqti: {farq.seconds // 3600} soat, {(farq.seconds % 3600) // 60} daqiqa")
+
+# 7.18 Xarajatlar kuzatuvchisi
+def xarajatlar():
+    xarajatlar = []
+    while True:
+        print("\n1. Qo'shish\n2. Umumiy\n3. Chiqish")
+        t = input("Tanlov: ")
+        if t == '1':
+            miqdor = float(input("Miqdor: "))
+            turi = input("Tur (ovqat, transport, boshqa): ")
+            xarajatlar.append({"miqdor": miqdor, "tur": turi})
+        elif t == '2':
+            jami = sum(x["miqdor"] for x in xarajatlar)
+            print("Jami xarajat:", jami)
+            for tur in set(x["tur"] for x in xarajatlar):
+                yig = sum(x["miqdor"] for x in xarajatlar if x["tur"] == tur)
+                print(f"  {tur}: {yig}")
+        elif t == '3':
+            break
+
+# 7.19 Ob-havo ma'lumotlari
+def ob_havo():
+    ob_havo = {}
+    while True:
+        sana = input("Sana (YYYY-MM-DD) yoki 'ko'rish': ")
+        if sana == "ko'rish":
+            for k, v in ob_havo.items():
+                print(f"{k}: {v}°C")
+            break
+        harorat = input("Harorat (°C): ")
+        ob_havo[sana] = harorat
+
+# 7.20 Kitob kutubxonasi
+def kitob_kutubxonasi():
+    kitoblar = {
+        "1": {"nomi": "Sherlock Holmes", "muallif": "Conan Doyle", "mavjud": True},
+        "2": {"nomi": "Harry Potter", "muallif": "Rowling", "mavjud": False}
+    }
+    while True:
+        print("\n1. Qidirish\n2. Ijaraga olish\n3. Qaytarish\n4. Chiqish")
+        t = input("Tanlov: ")
+        if t == '1':
+            nom = input("Kitob nomi: ")
+            for k, v in kitoblar.items():
+                if nom.lower() in v["nomi"].lower():
+                    print(f"{v['nomi']} — {'Mavjud' if v['mavjud'] else 'Ijara'}")
+        elif t == '2':
+            id = input("ID: ")
+            if id in kitoblar and kitoblar[id]["mavjud"]:
+                kitoblar[id]["mavjud"] = False
+                print("Ijaraga olindi.")
+            else:
+                print("Mavjud emas!")
+        elif t == '3':
+            id = input("ID: ")
+            if id in kitoblar:
+                kitoblar[id]["mavjud"] = True
+                print("Qaytarildi.")
+        elif t == '4':
+            break
+
+
+# ==================================================
+# 8. Qo'shimcha mashqlar
+# ==================================================
+
+# 8.1 Lotereya
+def lotereya():
+    import random
+    raqamlar = random.sample(range(1, 50), 6)
+    print("Lotereya raqamlari:", sorted(raqamlar))
+
+# 8.2 HTML teglarini olib tashlash
+def html_teg_ochir():
+    import re
+    matn = input("HTML matn: ")
+    toza = re.sub(r'<[^>]*>', '', matn)
+    print("Toza matn:", toza)
+
+# 8.3 Sonni rim raqamiga
+def arab_to_rim(n):
+    qiymatlar = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    rim = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+    natija = ""
+    for i in range(len(qiymatlar)):
+        while n >= qiymatlar[i]:
+            natija += rim[i]
+            n -= qiymatlar[i]
+    return natija
+
+def rim_test():
+    n = int(input("Arab raqami: "))
+    print("Rim raqami:", arab_to_rim(n))
+
+# 8.4 Morse kod
+def morse_kod():
+    morse = {
+        'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+        'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-',
+        'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
+        'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-',
+        'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
+        '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
+        '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----'
+    }
+    matn = input("Matn: ").upper()
+    morse_kod = ' '.join(morse.get(c, '') for c in matn if c != ' ')
+    print("Morse:", morse_kod)
+
+# 8.5 Binary search
+def binary_search(lst, target):
+    left, right = 0, len(lst) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if lst[mid] == target:
+            return mid
+        elif lst[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+def binary_test():
+    lst = [1, 3, 5, 7, 9, 11]
+    print("Indeks:", binary_search(lst, 7))
+
+# 8.6 Bubble sort
+def bubble_sort(lst):
+    n = len(lst)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if lst[j] > lst[j+1]:
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+    return lst
+
+def bubble_test():
+    print("Tartiblangan:", bubble_sort([64, 34, 25, 12, 22, 11, 90]))
+
+# 8.7 Matritsa transponerlash
+def transponer():
+    matrix = [[1, 2, 3], [4, 5, 6]]
+    transposed = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+    print("Transponerlangan:", transposed)
+
+# 8.8 Matnli grafika
+def yulduzchalar():
+    n = int(input("Qatorlar soni: "))
+    for i in range(1, n + 1):
+        print('*' * i)
+
+# 8.9 Sodda hash
+def sodda_hash(matn):
+    return sum(ord(c) * (i+1) for i, c in enumerate(matn)) % 1000
+
+def hash_test():
+    print("Hash:", sodda_hash("salom"))
+
+# 8.10 Ish kunlari
+def ish_kunlari_hisobla():
+    from datetime import datetime, timedelta
+    bosh = datetime.strptime(input("Boshlang'ich sana (YYYY-MM-DD): "), "%Y-%m-%d")
+    tug = datetime.strptime(input("Tugash sana (YYYY-MM-DD): "), "%Y-%m-%d")
+    ish_kunlari = 0
+    current = bosh
+    while current <= tug:
+        if current.weekday() < 5:
+            ish_kunlari += 1
+        current += timedelta(days=1)
+    print("Ish kunlari soni:", ish_kunlari)
+
+
+# ==================================================
+# ASOSIY MENYU — BARCHASINI ISHLATISH UCHUN
+# ==================================================
+
+if __name__ == "__main__":
+    print("🧠 Python Mashqlar To'plami (6.12 – 8.10)")
+    print("Quyidagi funksiyalardan birini chaqiring:")
+    print("- fayl_satrlar_uzunligi()")
+    print("- parol_generatori()")
+    print("- tic_tac_toe()")
+    print("- hangman()")
+    print("- ... va hokazo")
+    print("\nNamuna: parol_generatori()")
